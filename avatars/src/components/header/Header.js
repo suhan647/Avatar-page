@@ -3,16 +3,18 @@ import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
+import logo1 from '../../logo/logo1.png'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
   marginLeft: 0,
+  // marginRight:0,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(1),
@@ -24,10 +26,10 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: '100%',
   position: 'absolute',
-  pointerEvents: 'none',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -52,32 +54,41 @@ export default function SearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{background:"linear-gradient(91.1deg, rgb(57, 31, 105) -2.3%, rgb(115, 43, 155) 44.4%, rgb(231, 75, 184) 120.4%);"}}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+            <img src={logo1} alt='logo' height='50px' />
+
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{  display: { xs: 'none', sm: 'block' },ml:10, fontSize:'22px', fontWeight:500, mr:'400px'  }}
           >
-            MUI
+            Go To Market Page
           </Typography>
-          <Search>
+
+          {/* <Box sx={{display:'flex', justufyContent:'end'}}> */}
+          <Search  sx={{backgroundColor:'white', color:'black'}}>
             <SearchIconWrapper>
-              <SearchIcon />
+              <SearchIcon sx={{color:'black'}} />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+
+          <div style={{backgroundColor:'black', height:'40px', width:'40px', display:'flex', justifyContent:'center', alignItems:"center", borderRadius:'5px', marginLeft:'10px'}}>
+          <NotificationsIcon/>
+          </div>
+
+          <div style={{backgroundColor:'black', height:'40px', width:'40px', display:'flex', justifyContent:'center', alignItems:"center", borderRadius:'5px', marginLeft:'10px'}}>
+          <ShoppingCartIcon/>
+          </div>
+
+          <div style={{backgroundColor:'white', height:'40px', width:'40px', display:'flex', justifyContent:'center', alignItems:"center", borderRadius:'5px', marginLeft:'10px'}}>
+          <img alt='profile' src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.ndmzWlDy0P6s6JxKVyJUfAHaHa%26pid%3DApi&f=1&ipt=f6d8ddfb13add17158ce1263e362a537dccd8848803711e8ba2b1283b538edf8&ipo=images' hieght="30px" width="30px"  />
+          </div>
+          {/* </Box> */}
+         
         </Toolbar>
       </AppBar>
     </Box>
