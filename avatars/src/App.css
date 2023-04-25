@@ -1,0 +1,10 @@
+.round{
+    width:17px;
+    height:17px;
+    background-color: aqua;
+    border-radius: 20px;
+}
+
+.images{
+    border-radius: 20px;
+}

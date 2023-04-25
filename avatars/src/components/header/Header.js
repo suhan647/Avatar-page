@@ -9,6 +9,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import logo1 from '../../logo/logo1.png'
+import { Badge } from '@mui/material';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -65,7 +66,6 @@ export default function SearchAppBar() {
             Go To Market Page
           </Typography>
 
-          {/* <Box sx={{display:'flex', justufyContent:'end'}}> */}
           <Search  sx={{backgroundColor:'white', color:'black'}}>
             <SearchIconWrapper>
               <SearchIcon sx={{color:'black'}} />
@@ -77,17 +77,20 @@ export default function SearchAppBar() {
           </Search>
 
           <div style={{backgroundColor:'black', height:'40px', width:'40px', display:'flex', justifyContent:'center', alignItems:"center", borderRadius:'5px', marginLeft:'10px'}}>
-          <NotificationsIcon/>
+          <Badge  badgeContent={4} color="error">
+          <NotificationsIcon />
+          </Badge>
           </div>
 
           <div style={{backgroundColor:'black', height:'40px', width:'40px', display:'flex', justifyContent:'center', alignItems:"center", borderRadius:'5px', marginLeft:'10px'}}>
+          <Badge  badgeContent={5} color="error">
           <ShoppingCartIcon/>
+          </Badge>
           </div>
 
           <div style={{backgroundColor:'white', height:'40px', width:'40px', display:'flex', justifyContent:'center', alignItems:"center", borderRadius:'5px', marginLeft:'10px'}}>
           <img alt='profile' src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.ndmzWlDy0P6s6JxKVyJUfAHaHa%26pid%3DApi&f=1&ipt=f6d8ddfb13add17158ce1263e362a537dccd8848803711e8ba2b1283b538edf8&ipo=images' hieght="30px" width="30px"  />
           </div>
-          {/* </Box> */}
          
         </Toolbar>
       </AppBar>
