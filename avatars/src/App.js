@@ -8,7 +8,7 @@ function App() {
   return ( 
     <>
     <Header />
-    <div style={{display:'flex', backgroundColor:'#FAFAFA'}}>
+    <div style={{display:'flex', backgroundColor:'#FAFAFA', marginTop:'70px',}}>
       <Sidebar /> 
       <Avatars/>
       </div>

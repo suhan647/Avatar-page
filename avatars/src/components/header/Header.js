@@ -52,8 +52,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function SearchAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{background:"linear-gradient(91.1deg, rgb(57, 31, 105) -2.3%, rgb(115, 43, 155) 44.4%, rgb(231, 75, 184) 120.4%);"}}>
+    <Box sx={{ flexGrow: 1, }}>
+      
+      <AppBar position="fixed" sx={{background:"linear-gradient(91.1deg, rgb(57, 31, 105) -2.3%, rgb(115, 43, 155) 44.4%, rgb(231, 75, 184) 120.4%);"}}>
         <Toolbar>
             <img src={logo1} alt='logo' height='50px' />
 
@@ -61,7 +62,7 @@ export default function SearchAppBar() {
             variant="h6"
             noWrap
             component="div"
-            sx={{  display: { xs: 'none', sm: 'block' },ml:10, fontSize:'22px', fontWeight:500, mr:'400px'  }}
+            sx={{  display: { xs: 'none', sm: 'block' },ml:10, fontSize:'22px', fontWeight:500, mr:'500px'  }}
           >
             Go To Market Page
           </Typography>
