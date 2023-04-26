@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import {List, ListItem, Checkbox, ListItemText,Divider,  } from '@mui/material'
+import {List, ListItem, Checkbox, ListItemText,Divider, MenuItem,  } from '@mui/material'
 import '../../App.css'
 
 const options = [  { label: 'VRChat (Quest)', value: 'vrchat_quest' },  { label: 'VRChat (PCVR)', value: 'vrchat_pcvr' },  { label: 'Others', value: 'others' },];
 
-const category = [{label:'Full Avatars'}, {label:'Others'}]
+// const category = [{label:'Full Avatars'}, {label:'Others'}]
+const category = [
+  { label: 'Full Avatars', options: ['Male', 'Female', 'Others'] },
+  { label: 'Others', options: [] }
+];
 
 const priceOptions = [  { label: 'Under $10', value: 'under_10' },  { label: '$10 to $20', value: '10_to_20' },  { label: '$20 to $30', value: '20_to_30' },  { label: '$30 to $40', value: '30_to_40' },  { label: '$40 to $50', value: '40_to_50' },  { label: '$50 to $70', value: '50_to_70' },  { label: '$70 & above', value: '70_above' },];
 
@@ -14,6 +18,12 @@ const autoUploadOptions = [  { label: 'Supported', value: 'supported' },  { labe
 
 export default function Sidebar() {
   const [checked, setChecked] = useState([]);
+
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category === selectedCategory ? null : category);
+  };
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
@@ -31,35 +41,44 @@ export default function Sidebar() {
   return (
     <div style={{ display: 'flex', height: '80vh',marginLeft:'10px' }}>
       <div style={{ width: 200, height: '100%', backgroundColor: "#FAFAFA" }}>
-      <List sx={{margin:0}}>
-          <b style={{fontSize:'16px'}}> Category</b>
-          {category.map(({ label, value }) => {
-            const isChecked = checked.indexOf(value) !== -1;
 
-            return (
-              <ListItem
-              key={value}
+<List sx={{ margin: 0 }}>
+      <b style={{ fontSize: '16px' }}> Category</b>
+      {category.map(({ label, options }) => {
+        const isFullAvatarCategory = label === 'Full Avatars';
+        const isCategorySelected = selectedCategory === label;
+
+        return (
+          <div key={label}>
+            <ListItem
               dense
               button
-              onClick={handleToggle(value)}
-              style={{ padding: 0, marginLeft: "20px", fontSize: "" }}
-              sx={{ display: "flex", alignItems: "center" }}
+              onClick={() => handleCategoryClick(label)}
+              style={{ padding: 0, marginLeft: '20px', fontSize: '' }}
+              sx={{ display: 'flex', alignItems: 'center' }}
             >
-              <Checkbox edge="start" checked={isChecked} tabIndex={-1} disableRipple />
               <ListItemText
                 primary={label}
                 primaryTypographyProps={{
-                  variant: "subtitle2",
-                  style: { fontWeight: "bold", fontSize: "10px", paddingTop: 0, paddingBottom: 0 },
+                  variant: 'subtitle2',
+                  style: { fontWeight: 'bold', fontSize: '10px', paddingTop: 0, paddingBottom: 0 },
                 }}
               />
             </ListItem>
-            
-            );
-          })}
-        </List>
+            {isFullAvatarCategory && isCategorySelected && (
+              <div style={{ marginLeft: '40px' }}>
+                {options.map((option) => (
+                  <MenuItem sx={{fontSize:'10px'}} key={option} value={option}>
+                    {option}
+                  </MenuItem>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </List>
         <Divider/>
-
 
       <List sx={{margin:0}}>
           <b style={{fontSize:'16px'}}>Polygon Amount</b>
@@ -131,10 +150,7 @@ export default function Sidebar() {
 
             return (
               <ListItem key={value} dense button onClick={handleToggle(value)} style={{ padding: 0 ,  marginLeft:'20px'}}>
-
-              
                   <Checkbox edge="start" checked={isChecked} tabIndex={-1} disableRipple />
-             
                   <ListItemText primary={label} primaryTypographyProps={{ variant: 'subtitle2', style: { fontWeight: 'bold' , fontSize:'10px'} }} />
               </ListItem>
             );
