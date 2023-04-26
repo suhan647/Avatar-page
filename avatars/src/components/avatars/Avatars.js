@@ -21,11 +21,6 @@ const Avatars = (props) => {
   const dispatch = useDispatch()
   const navigate= useNavigate()
 
-  useEffect(() => {
-    console.log(props.category);
-  },[props.category])
-
-
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
   };
@@ -38,6 +33,12 @@ const Avatars = (props) => {
   const endIndex = startIndex + cardsPerPage;
   const visibleCards = Data.Avatars.slice(startIndex, endIndex);
 
+  const finalArray = props.category.length > 0 ? props.category : visibleCards
+
+  useEffect(() => {
+    console.log(props.category);
+  },[props.category])
+  
   const clickHandler = (a) => {
   navigate(`/details/${a.id}`)
   }
@@ -51,7 +52,7 @@ const Avatars = (props) => {
     <>
        <Box>
         <Grid container sx={{ width: '100%', justifyContent: 'space-between' }}>
-          {visibleCards.map((a) => {
+          {finalArray.map((a) => {
             return (
               <Grid item xs={12} sm={6} md={3} key={a.id}>
                 <Box sx={{ mt: '20px', ml: '5px', display: 'flex', flexDirection: "column", width: '250px', }}>
@@ -62,7 +63,7 @@ const Avatars = (props) => {
                  </Button>
                  </Box>
                  <Box  sx={{cursor:'pointer'}}>
-                  <img className='images' src={a.image} width='250px' height='250px' alt="avatars" sx={{cursor:'pointer'}} onClick={(e)=>clickHandler(e,a)}/>
+                  <img className='images' src={a.image} width='250px' height='250px' alt="avatars" sx={{cursor:'pointer'}} onClick={()=>clickHandler(a)}/>
                   </Box>
                   <b>{a.name}</b>
 
@@ -113,7 +114,9 @@ const Avatars = (props) => {
     {[...Array(totalPages)].map((_, i) => (
       <Button key={i} onClick={() => setCurrentPage(i + 1)} disabled={currentPage === i + 1}>
         {i + 1}
-      </Button>
+          </Button>
+               
+
     ))}
     <IconButton aria-label="next page" onClick={handleNextPage} disabled={currentPage === totalPages}>
       <ArrowForwardIosIcon />

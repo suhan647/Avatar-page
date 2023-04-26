@@ -34,6 +34,11 @@ const AvatarDetails = () => {
   navigate('/')
  }
 
+ const buyHandler = () => {
+  alert("Great choice! Avatar successfully purchased")
+  navigate('/')
+ }
+
   return (
     <Box sx={{ p: 3 }}>
       <Box
@@ -86,7 +91,7 @@ const AvatarDetails = () => {
             <Button variant="contained" color="primary" sx={{ mt: 3 , backgroundColor:'green'}} onClick={()=> {addToCartHandler(avatar)}}>
               Add to Cart
             </Button>
-            <Button variant="contained"  sx={{ mt: 3, backgroundColor:'red' }}>
+            <Button variant="contained"  sx={{ mt: 3, backgroundColor:'red' }} onClick={buyHandler}>
               Buy Now
             </Button>
             </Box>

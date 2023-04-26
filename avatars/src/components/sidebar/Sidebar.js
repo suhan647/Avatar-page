@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {List, ListItem, Checkbox, ListItemText,Divider, MenuItem,  } from '@mui/material'
 import '../../App.css'
 import Data from '../data/Data.json'
@@ -6,7 +6,7 @@ import Data from '../data/Data.json'
 const options = [  { label: 'VRChat (Quest)', value: 'vrchat_quest' },  { label: 'VRChat (PCVR)', value: 'vrchat_pcvr' },  { label: 'Others', value: 'others' },];
 
 const category = [
-  { label: 'Full Avatars', options: ['Male', 'FeMale', 'Others'] },
+  { label: 'Full Avatars', options: ['Male', 'feMale', 'Others'] },
   { label: 'Others', options: [] }
 ];
 
@@ -40,17 +40,12 @@ export default function Sidebar(props) {
   };
 
   function CategoryHandler(option){
-    if(option === "Male"){
-       props.setCategory(Data.Avatars.filter((men) =>men.gender === option))  
-    }else if(option === "FeMale"){
-      props.setCategory(Data.Avatars.filter((men) =>men.gender !== option))  
+    if(option){
+       props.setCategory(Data.Avatars.filter((category) =>category.gender === option))  
+       console.log(option);
     }
   }
-
-  
-
  
-
   return (
     <div style={{ display: 'flex', height: '80vh',marginLeft:'10px' }}>
       <div style={{ width: 200, height: '100%', backgroundColor: "#FAFAFA" }}>

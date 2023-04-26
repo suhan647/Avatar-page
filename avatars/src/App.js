@@ -13,7 +13,6 @@ function App() {
   const showSidebar = location.pathname === '/';
 
   const [category, setCategory] = useState([])
-  // const [womens, setwomens] = useState([])
   
   return (
     <>

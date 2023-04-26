@@ -14,11 +14,14 @@ const initialState = {
       removeItem: (state, action) => {
         state.items = state.items.filter(item => item.id !== action.payload)
       },
+      resetCart: state => {
+        return initialState;
+      },
      
     }
   })
   
-  export const { addItem, removeItem, } = AvatarCart.actions
+  export const { addItem, removeItem,resetCart } = AvatarCart.actions
   
   export default AvatarCart.reducer
   
