@@ -9,7 +9,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682498610/VRC_image_A_F_iiybub.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 2,
@@ -19,7 +20,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682498962/VRC_image_B_F_mk59bw.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 3,
@@ -29,7 +31,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682498818/VRC_image_C_M_irkmd9.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "Male"
       },
       {
         "id": 4,
@@ -39,7 +42,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682498796/VRC_image_D_F_jgrexw.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 5,
@@ -49,7 +53,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682498750/VRC_image_E_M_g35xym.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "Male"
       },
       {
         "id": 6,
@@ -59,7 +64,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682498750/VRC_image_F_F_bgkumm.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 7,
@@ -69,7 +75,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499316/VRC_image_G_F_zk4ija.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 8,
@@ -79,7 +86,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682498829/VRC_image_H_F_zjua6d.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 9,
@@ -89,7 +97,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682498971/VRC_image_I_F_jktfjt.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 10,
@@ -99,7 +108,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499327/VRC_image_J_M_l186lp.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "Male"
       },
       {
         "id": 11,
@@ -109,7 +119,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499186/VRC_image_K_M_frmnud.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "Male"
       },
       {
         "id": 12,
@@ -119,7 +130,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499160/VRC_image_L_F_en6mh0.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 13,
@@ -129,7 +141,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499129/VRC_image_M_F_txur6v.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 14,
@@ -139,7 +152,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682498979/VRC_image_N_F_miqb6t.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 15,
@@ -149,7 +163,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499055/VRC_image_O_F_nqzang.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 16,
@@ -159,7 +174,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499201/VRC_image_P_F_i3fbrd.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 17,
@@ -169,7 +185,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499200/VRC_image_Q_M_y0p54t.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "Male"
       },
       {
         "id": 18,
@@ -179,7 +196,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499089/VRC_image_R_F_ikpmu2.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 19,
@@ -189,7 +207,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499085/VRC_image_S_F_alokhm.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 20,
@@ -199,7 +218,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499076/VRC_image_T_F_gloamc.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 21,
@@ -209,7 +229,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499090/VRC_image_U_F_nxjctg.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 22,
@@ -219,7 +240,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499090/VRC_image_V_F_dznmwo.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 23,
@@ -229,7 +251,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499186/VRC_image_W_F_fhcpye.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       },
       {
         "id": 24,
@@ -239,7 +262,8 @@
         "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499335/VRC_image_X_F_nk97on.png",
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
-        "system" : "PC Only"
+        "system" : "PC Only",
+        "gender" : "feMale"
       }
       
     ]

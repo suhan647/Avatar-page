@@ -6,6 +6,10 @@ import '../../App.css'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useNavigate } from 'react-router-dom';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import IosShareIcon from '@mui/icons-material/IosShare';
+
 
 const Avatars = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -40,6 +44,12 @@ const Avatars = () => {
               <Grid item xs={12} sm={6} md={3} key={a.id}>
                 <Box sx={{ mt: '20px', ml: '5px', display: 'flex', flexDirection: "column", width: '250px', }}>
 
+                <Box sx={{ position: 'relative', }}>
+                 <Button variant="contained" sx={{ position: 'absolute', top: 0, right: 0 , fontSize:'10px'}} aria-label="add to cart">
+                   <ShoppingCartIcon /><span>Add</span>
+                 </Button>
+                 </Box>
+                 
                   <img className='images' src={a.image} width='250px' height='250px' alt="avatars" onClick={(e)=>clickHandler(e,a)}/>
 
                   <b>{a.name}</b>
@@ -51,6 +61,8 @@ const Avatars = () => {
                     <StarIcon fontSize="10px" sx={{ color: '#F6BE00' }} />
                     <StarIcon fontSize="10px" sx={{ color: '#F6BE00' }} />
                     <small style={{ fontSize: '13px', color: 'gray' }}>{a.starsandLikes}</small>
+
+                    <Box sx={{alignItems:'center', display:'flex'}}><FavoriteIcon fontSize='small' sx={{color:"#6A6A6A", ml:'35px', }} className='heart'/></Box>
                   </Box>
 
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -70,8 +82,9 @@ const Avatars = () => {
                     <div style={{ fontSize: '10px', paddingLeft: '3px' }}>{a.system}</div>
                   </Box>
 
-                  <Box sx={{ mt: '0' }}>
-                    <b style={{ fontSize: '10px' }}>{a.description}</b>
+                  <Box sx={{ mt: '0' , display:'flex'}}>
+                    <b style={{ fontSize: '10px' , }}>{a.description}</b>
+                    <Box sx={{color:'#6A6A6A'}}><IosShareIcon fontSize='small' /></Box>
                   </Box>
 
                 </Box>
