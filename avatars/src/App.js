@@ -5,11 +5,14 @@ import Header from './components/header/Header';
 import Avatars from './components/avatars/Avatars';
 import AvatarDetails from './components/avatars/AvatarDetails';
 import Cart from './components/cart/Cart';
+import { useState } from 'react';
 
 function App() {
   const location = useLocation();
 
   const showSidebar = location.pathname === '/';
+
+
 
   return (
     <>

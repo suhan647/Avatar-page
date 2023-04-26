@@ -17,7 +17,7 @@ const Avatars = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 12;
   const totalPages = Math.ceil(Data.Avatars.length / cardsPerPage);
-
+ 
   const dispatch = useDispatch()
   const navigate= useNavigate()
 
@@ -33,8 +33,7 @@ const Avatars = () => {
   const endIndex = startIndex + cardsPerPage;
   const visibleCards = Data.Avatars.slice(startIndex, endIndex);
 
-  const clickHandler = (e, a) => {
-  // console.log('visibleCards', a.id);
+  const clickHandler = (a) => {
   navigate(`/details/${a.id}`)
   }
 

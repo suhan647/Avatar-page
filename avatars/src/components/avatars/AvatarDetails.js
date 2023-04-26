@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Data from '../data/Data.json';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import {
   Typography,
   Box,
@@ -10,16 +10,30 @@ import {
   Button,
   Divider,
 } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../redux/slices/AvatarCartSlice';
 
 const AvatarDetails = () => {
 
   const { id } = useParams();
+  const dispatch = useDispatch()
 
   console.log(id);
 
   const avatar = Data.Avatars.find((a) => a.id === Number(id));
 
   console.log(avatar);
+
+  const addToCartHandler = (a) => {
+    console.log(a);
+    dispatch(addItem(a))
+ }
+
+ const navigate = useNavigate()
+
+ function backHandler(){
+  navigate('/')
+ }
 
   return (
     <Box sx={{ p: 3 }}>
@@ -32,7 +46,7 @@ const AvatarDetails = () => {
         }}
       >
         <Typography variant="h4">{avatar.name}</Typography>
-        <Button variant="outlined" color="primary">
+        <Button variant="outlined" color="primary" onClick={backHandler}>
           Back
         </Button>
       </Box>
@@ -69,9 +83,14 @@ const AvatarDetails = () => {
             <Typography variant="h6" sx={{ my: 2 }}>
               ${avatar.price}
             </Typography>
-            <Button variant="contained" color="primary" sx={{ mt: 3 }}>
+            <Box sx={{display:'flex', justifyContent:'space-evenly'}}>
+            <Button variant="contained" color="primary" sx={{ mt: 3 , backgroundColor:'green'}} onClick={()=> {addToCartHandler(avatar)}}>
               Add to Cart
             </Button>
+            <Button variant="contained"  sx={{ mt: 3, backgroundColor:'red' }}>
+              Buy Now
+            </Button>
+            </Box>
           </Paper>
         </Grid>
       </Grid>

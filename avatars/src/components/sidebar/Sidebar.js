@@ -42,7 +42,7 @@ export default function Sidebar() {
     <div style={{ display: 'flex', height: '80vh',marginLeft:'10px' }}>
       <div style={{ width: 200, height: '100%', backgroundColor: "#FAFAFA" }}>
 
-<List sx={{ margin: 0 }}>
+      <List sx={{ margin: 0 }}>
       <b style={{ fontSize: '16px' }}> Category</b>
       {category.map(({ label, options }) => {
         const isFullAvatarCategory = label === 'Full Avatars';
