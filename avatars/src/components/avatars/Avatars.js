@@ -9,12 +9,16 @@ import { useNavigate } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import IosShareIcon from '@mui/icons-material/IosShare';
+import { useDispatch } from 'react-redux'
+import { addItem } from '../../redux/slices/AvatarCartSlice';
 
 
 const Avatars = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 12;
   const totalPages = Math.ceil(Data.Avatars.length / cardsPerPage);
+
+const dispatch = useDispatch()
 
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
@@ -35,6 +39,11 @@ const Avatars = () => {
   navigate(`/details/${a.id}`)
   }
 
+  const addToCartHandler = (a) => {
+     console.log(a);
+     dispatch(addItem(a))
+  }
+
   return (
     <>
        <Box>
@@ -46,7 +55,7 @@ const Avatars = () => {
 
                 <Box sx={{ position: 'relative', }}>
                  <Button variant="contained" sx={{ position: 'absolute', top: 0, right: 0 , fontSize:'10px'}} aria-label="add to cart">
-                   <ShoppingCartIcon /><span>Add</span>
+                 <span style={{display:'flex', alignItems:'center'}} onClick={() => {addToCartHandler(a)}}><ShoppingCartIcon />Add</span>
                  </Button>
                  </Box>
                  
