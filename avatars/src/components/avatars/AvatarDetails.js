@@ -10,7 +10,7 @@ import {
   Divider,
 } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { addItem } from '../../redux/slices/AvatarCartSlice';
+import { addItem, } from '../../redux/slices/AvatarCartSlice';
 
 const AvatarDetails = () => {
 

@@ -1,6 +1,7 @@
 import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItem } from '../../redux/slices/AvatarCartSlice';
+import { useNavigate } from 'react-router-dom';
 
 export default function Cart() {
   const data = useSelector((state) => state.AvatarCart.items)
@@ -10,6 +11,10 @@ export default function Cart() {
     dispatch(removeItem(item.id))
   }
 
+  const buyHandler = () => {
+    alert("Great choice! Avatar successfully purchased")
+   }
+  
   return (
     <div style={{ background: "#F8F8F8", padding: "20px" }}>
       <Typography variant="h4" style={{ marginBottom: "20px" }}>Shopping Cart</Typography>
@@ -38,10 +43,14 @@ export default function Cart() {
                 {item.starsandLikes}
               </Typography>
             </CardContent>
-            <div>
-              <Button size="small" color="secondary" onClick={()=>{removeCartHandler(item)}}>
+            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+              <Button size="small" variant="contained" sx={{ mt: 3, mb:3, backgroundColor:'red' }} onClick={()=>{removeCartHandler(item)}}>
                 Remove
               </Button>
+
+              <Button size="small" variant="contained"  sx={{ mt: 3, mb:3, mr:2, backgroundColor:'green' }} onClick={ buyHandler}>
+              Buy Now
+            </Button>
             </div>
           </div>
         </Card>
@@ -51,12 +60,6 @@ export default function Cart() {
           Your cart is empty.
         </Typography>
       )}
-      {/* {data.length > 0 && (
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "20px" }}>
-          <Typography variant="h6">Total:</Typography>
-          <Typography variant="h5" sx={{ fontWeight: "bold" }}>${totalPrice}</Typography>
-        </div>
-      )} */}
     </div>
   );
 }
