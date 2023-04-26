@@ -3,15 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeItem } from '../../redux/slices/AvatarCartSlice';
 
 export default function Cart() {
-
   const data = useSelector((state) => state.AvatarCart.items)
   const dispatch = useDispatch()
 
   const removeCartHandler = (item) => {
     dispatch(removeItem(item.id))
   }
+
   return (
-    <div>
+    <div style={{ background: "#F8F8F8", padding: "20px" }}>
+      <Typography variant="h4" style={{ marginBottom: "20px" }}>Shopping Cart</Typography>
       {data.map((item) => (
         <Card  sx={{display: 'flex', marginBottom: "20px"}} key={item.id}>
           <CardMedia
@@ -24,13 +25,13 @@ export default function Cart() {
               <Typography component="h5" variant="h5">
                 {item.name}
               </Typography>
-              <Typography variant="subtitle1" color="textSecondary">
+              <Typography variant="subtitle1" color="textSecondary" style={{ marginBottom: "10px" }}>
                 {item.smallName} | {item.gender} | {item.system}
               </Typography>
-              <Typography sx={{ fontWeight: 'bold'}}>
+              <Typography sx={{ fontWeight: 'bold', marginBottom: "10px" }}>
                 ${item.price}
               </Typography>
-              <Typography variant="subtitle2">
+              <Typography variant="subtitle2" style={{ marginBottom: "10px" }}>
                 {item.description}
               </Typography>
               <Typography variant="subtitle2">
@@ -45,6 +46,17 @@ export default function Cart() {
           </div>
         </Card>
       ))}
+      {data.length === 0 && (
+        <Typography variant="subtitle1" style={{ marginTop: "20px" }}>
+          Your cart is empty.
+        </Typography>
+      )}
+      {/* {data.length > 0 && (
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "20px" }}>
+          <Typography variant="h6">Total:</Typography>
+          <Typography variant="h5" sx={{ fontWeight: "bold" }}>${totalPrice}</Typography>
+        </div>
+      )} */}
     </div>
   );
 }

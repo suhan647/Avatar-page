@@ -65,14 +65,26 @@ export default function SearchAppBar() {
 
 <Box sx={{display:'flex', justifyContent:'space-between', }}>
   <Box sx={{display:'flex', alignItems:'center', mr:'50px'}}>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{  display: { xs: 'none', sm: 'block' },ml:5, fontSize:'22px', fontWeight:500,   }}
-          >
-            Go To Market Page
-          </Typography>
+
+  
+  <Typography
+  variant="h6"
+  noWrap
+  component="div"
+  sx={{
+    display: { xs: 'none', sm: 'block' },
+    ml: 5,
+    fontSize: '22px',
+    fontWeight: 500,
+    color: 'white' 
+  }}
+>
+  <NavLink to='/' sx={{ color: 'white' }}>
+   <span style={{color:'white'}}> Go To Market Page</span>
+  </NavLink>
+</Typography>
+
+         
           </Box>
 
           <Box sx={{display:'flex', alignItems:'center', ml:'420px'}}>
