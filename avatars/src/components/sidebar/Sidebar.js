@@ -29,9 +29,8 @@ export default function Sidebar() {
   };
 
   return (
-    <div  style={{display: 'flex'}}>
-      <div  style={{ width: 200,height: '100%',backgroundColor: "#FAFAFA"}}>
-
+    <div style={{ display: 'flex', height: '80vh' }}>
+      <div style={{ width: 200, height: '100%', backgroundColor: "#FAFAFA" }}>
       <List sx={{margin:0}}>
           <b style={{fontSize:'16px'}}> Category</b>
           {category.map(({ label, value }) => {

@@ -240,16 +240,6 @@
         "starsandLikes":"4.7 & 100Likes",
         "smallName":"Avatar Joe's",
         "system" : "PC Only"
-      },
-      {
-        "id": 25,
-        "name": "Avatar name  \"Avatown\" - nice orignal avatar of Avatown ",
-        "price": "50.00",
-        "description": "Auto Upload service ready, you can use this avatar within 24 hours.",
-        "image":"https://res.cloudinary.com/dwhgqwwat/image/upload/v1682499201/VRC_image_P_F_i3fbrd.png",
-        "starsandLikes":"4.7 & 100Likes",
-        "smallName":"Avatar Joe's",
-        "system" : "PC Only"
       }
       
     ]
