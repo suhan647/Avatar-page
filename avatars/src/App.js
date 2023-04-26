@@ -12,15 +12,16 @@ function App() {
 
   const showSidebar = location.pathname === '/';
 
-
-
+  const [category, setCategory] = useState([])
+  // const [womens, setwomens] = useState([])
+  
   return (
     <>
       <Header />
       <div style={{ display: 'flex', backgroundColor: '#FAFAFA', marginTop: '70px' }}>
-        {showSidebar && <Sidebar />}
+        {showSidebar && <Sidebar category={category} setCategory={setCategory}  />}
         <Routes>
-          <Route path="/" element={<Avatars />} />
+          <Route path="/" element={<Avatars category={category} setCategory={setCategory}  />} />
           <Route path="/details/:id" element={<AvatarDetails />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>

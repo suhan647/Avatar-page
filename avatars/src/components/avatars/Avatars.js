@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Avatar, Box, Grid, Button, IconButton } from "@mui/material"
 import StarIcon from '@mui/icons-material/Star';
 import Data from '../data/Data.json'
@@ -13,13 +13,18 @@ import { useDispatch } from 'react-redux'
 import { addItem } from '../../redux/slices/AvatarCartSlice';
 
 
-const Avatars = () => {
+const Avatars = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 12;
   const totalPages = Math.ceil(Data.Avatars.length / cardsPerPage);
  
   const dispatch = useDispatch()
   const navigate= useNavigate()
+
+  useEffect(() => {
+    console.log(props.category);
+  },[props.category])
+
 
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);

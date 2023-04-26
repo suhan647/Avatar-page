@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Data from '../data/Data.json';
 import { useNavigate, useParams } from 'react-router-dom';
 import {

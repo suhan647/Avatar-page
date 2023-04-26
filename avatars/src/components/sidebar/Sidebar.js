@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {List, ListItem, Checkbox, ListItemText,Divider, MenuItem,  } from '@mui/material'
 import '../../App.css'
+import Data from '../data/Data.json'
 
 const options = [  { label: 'VRChat (Quest)', value: 'vrchat_quest' },  { label: 'VRChat (PCVR)', value: 'vrchat_pcvr' },  { label: 'Others', value: 'others' },];
 
-// const category = [{label:'Full Avatars'}, {label:'Others'}]
 const category = [
-  { label: 'Full Avatars', options: ['Male', 'Female', 'Others'] },
+  { label: 'Full Avatars', options: ['Male', 'FeMale', 'Others'] },
   { label: 'Others', options: [] }
 ];
 
@@ -16,7 +16,8 @@ const polygonOptions = [  { label: 'Under $7,500', value: 'under_7500' },  { lab
 
 const autoUploadOptions = [  { label: 'Supported', value: 'supported' },  { label: 'Unsupported', value: 'unsupported' },];
 
-export default function Sidebar() {
+export default function Sidebar(props) {
+
   const [checked, setChecked] = useState([]);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -37,6 +38,18 @@ export default function Sidebar() {
 
     setChecked(newChecked);
   };
+
+  function CategoryHandler(option){
+    if(option === "Male"){
+       props.setCategory(Data.Avatars.filter((men) =>men.gender === option))  
+    }else if(option === "FeMale"){
+      props.setCategory(Data.Avatars.filter((men) =>men.gender !== option))  
+    }
+  }
+
+  
+
+ 
 
   return (
     <div style={{ display: 'flex', height: '80vh',marginLeft:'10px' }}>
@@ -68,8 +81,8 @@ export default function Sidebar() {
             {isFullAvatarCategory && isCategorySelected && (
               <div style={{ marginLeft: '40px' }}>
                 {options.map((option) => (
-                  <MenuItem sx={{fontSize:'10px'}} key={option} value={option}>
-                    {option}
+                  <MenuItem onClick={()=> {CategoryHandler(option)}} sx={{fontSize:'10px'}} key={option} value={option}>
+                    <span >{option}</span>
                   </MenuItem>
                 ))}
               </div>
