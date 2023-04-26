@@ -4,6 +4,7 @@ import Sidebar from './components/sidebar/Sidebar';
 import Header from './components/header/Header';
 import Avatars from './components/avatars/Avatars';
 import AvatarDetails from './components/avatars/AvatarDetails';
+import Cart from './components/cart/Cart';
 
 function App() {
   const location = useLocation();
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Avatars />} />
           <Route path="/details/:id" element={<AvatarDetails />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
     </>

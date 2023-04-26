@@ -29,7 +29,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div style={{ display: 'flex', height: '80vh' }}>
+    <div style={{ display: 'flex', height: '80vh',marginLeft:'10px' }}>
       <div style={{ width: 200, height: '100%', backgroundColor: "#FAFAFA" }}>
       <List sx={{margin:0}}>
           <b style={{fontSize:'16px'}}> Category</b>

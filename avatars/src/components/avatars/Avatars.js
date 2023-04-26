@@ -18,7 +18,8 @@ const Avatars = () => {
   const cardsPerPage = 12;
   const totalPages = Math.ceil(Data.Avatars.length / cardsPerPage);
 
-const dispatch = useDispatch()
+  const dispatch = useDispatch()
+  const navigate= useNavigate()
 
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
@@ -31,8 +32,6 @@ const dispatch = useDispatch()
   const startIndex = (currentPage - 1) * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
   const visibleCards = Data.Avatars.slice(startIndex, endIndex);
-
-  const navigate = useNavigate()
 
   const clickHandler = (e, a) => {
   // console.log('visibleCards', a.id);
@@ -58,9 +57,9 @@ const dispatch = useDispatch()
                  <span style={{display:'flex', alignItems:'center'}} onClick={() => {addToCartHandler(a)}}><ShoppingCartIcon />Add</span>
                  </Button>
                  </Box>
-                 
-                  <img className='images' src={a.image} width='250px' height='250px' alt="avatars" onClick={(e)=>clickHandler(e,a)}/>
-
+                 <Box  sx={{cursor:'pointer'}}>
+                  <img className='images' src={a.image} width='250px' height='250px' alt="avatars" sx={{cursor:'pointer'}} onClick={(e)=>clickHandler(e,a)}/>
+                  </Box>
                   <b>{a.name}</b>
 
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -93,7 +92,7 @@ const dispatch = useDispatch()
 
                   <Box sx={{ mt: '0' , display:'flex'}}>
                     <b style={{ fontSize: '10px' , }}>{a.description}</b>
-                    <Box sx={{color:'#6A6A6A'}}><IosShareIcon fontSize='small' /></Box>
+                    <Box sx={{color:'#6A6A6A'}}><IosShareIcon fontSize='small' sx={{cursor:'pointer'}}/></Box>
                   </Box>
 
                 </Box>

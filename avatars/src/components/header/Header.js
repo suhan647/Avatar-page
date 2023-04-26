@@ -10,6 +10,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import logo1 from '../../logo/logo1.png'
 import { Badge } from '@mui/material';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -51,12 +53,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
+
+  const cartlength = useSelector((state) => state.AvatarCart.items)
+
   return (
     <Box sx={{ flexGrow: 1, }}>
       
       <AppBar position="fixed" sx={{background:"linear-gradient(91.1deg, rgb(57, 31, 105) -2.3%, rgb(115, 43, 155) 44.4%, rgb(231, 75, 184) 120.4%);"}}>
         <Toolbar>
-            <img src={logo1} alt='logo' height='50px' />
+            <img src={logo1} alt='logo' height='50px'  />
 
           <Typography
             variant="h6"
@@ -84,9 +89,11 @@ export default function SearchAppBar() {
           </div>
 
           <div style={{backgroundColor:'black', height:'40px', width:'40px', display:'flex', justifyContent:'center', alignItems:"center", borderRadius:'5px', marginLeft:'10px'}}>
-          <Badge  badgeContent={5} color="error">
-          <ShoppingCartIcon/>
+            <NavLink to='/cart' sx={{backgroundColor:'white', color:'white'}}>
+          <Badge  badgeContent={cartlength.length ? cartlength.length : "0" } color="error">
+          <ShoppingCartIcon sx={{ color:'white'}}/>
           </Badge>
+          </NavLink >
           </div>
 
           <div style={{backgroundColor:'white', height:'40px', width:'40px', display:'flex', justifyContent:'center', alignItems:"center", borderRadius:'5px', marginLeft:'10px', marginRight:0}}>
