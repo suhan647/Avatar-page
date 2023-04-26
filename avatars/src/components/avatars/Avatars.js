@@ -11,6 +11,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import IosShareIcon from '@mui/icons-material/IosShare';
 import { useDispatch } from 'react-redux'
 import { addItem } from '../../redux/slices/AvatarCartSlice';
+import DropdownButton from '../button/DropDownButton';
 
 
 const Avatars = (props) => {
@@ -51,6 +52,11 @@ const Avatars = (props) => {
   return (
     <>
        <Box>
+       <Box sx={{display:'flex', justifyContent:'space-between', alignItems:'center', width:'90%'}}>
+
+           { props.category.length > 0 ?<h3>Filtered Items</h3> : <h3>All Items</h3>}
+            <span style={{marginRight:"15px"}}><DropdownButton/></span>
+          </Box>
         <Grid container sx={{ width: '100%', justifyContent: 'space-between' }}>
           {finalArray.map((a) => {
             return (

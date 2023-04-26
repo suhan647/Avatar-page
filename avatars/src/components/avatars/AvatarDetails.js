@@ -41,6 +41,7 @@ const AvatarDetails = () => {
 
   return (
     <Box sx={{ p: 3 }}>
+      
       <Box
         sx={{
           display: 'flex',

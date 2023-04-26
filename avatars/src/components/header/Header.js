@@ -63,15 +63,20 @@ export default function SearchAppBar() {
         <Toolbar>
             <img src={logo1} alt='logo' height='50px'  />
 
+<Box sx={{display:'flex', justifyContent:'space-between', }}>
+  <Box sx={{display:'flex', alignItems:'center', mr:'50px'}}>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{  display: { xs: 'none', sm: 'block' },ml:5, fontSize:'22px', fontWeight:500, mr:'450px'  }}
+            sx={{  display: { xs: 'none', sm: 'block' },ml:5, fontSize:'22px', fontWeight:500,   }}
           >
             Go To Market Page
           </Typography>
+          </Box>
 
+          <Box sx={{display:'flex', alignItems:'center', ml:'420px'}}>
+           
           <Search  sx={{backgroundColor:'white', color:'black'}}>
             <SearchIconWrapper>
               <SearchIcon sx={{color:'black'}} />
@@ -99,7 +104,8 @@ export default function SearchAppBar() {
           <div style={{backgroundColor:'white', height:'40px', width:'40px', display:'flex', justifyContent:'center', alignItems:"center", borderRadius:'5px', marginLeft:'10px', marginRight:0}}>
           <img alt='profile' src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.ndmzWlDy0P6s6JxKVyJUfAHaHa%26pid%3DApi&f=1&ipt=f6d8ddfb13add17158ce1263e362a537dccd8848803711e8ba2b1283b538edf8&ipo=images' hieght="30px" width="30px"  />
           </div>
-         
+          </Box>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>
