@@ -5,6 +5,7 @@ import Data from '../data/Data.json'
 import '../../App.css'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { useNavigate } from 'react-router-dom';
 
 const Avatars = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,6 +24,13 @@ const Avatars = () => {
   const endIndex = startIndex + cardsPerPage;
   const visibleCards = Data.Avatars.slice(startIndex, endIndex);
 
+  const navigate = useNavigate()
+
+  const clickHandler = (e, a) => {
+  // console.log('visibleCards', a.id);
+  navigate(`/details/${a.id}`)
+  }
+
   return (
     <>
        <Box>
@@ -31,7 +39,9 @@ const Avatars = () => {
             return (
               <Grid item xs={12} sm={6} md={3} key={a.id}>
                 <Box sx={{ mt: '20px', ml: '5px', display: 'flex', flexDirection: "column", width: '250px', }}>
-                  <img className='images' src={a.image} width='250px' height='250px' alt="avatars" />
+
+                  <img className='images' src={a.image} width='250px' height='250px' alt="avatars" onClick={(e)=>clickHandler(e,a)}/>
+
                   <b>{a.name}</b>
 
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
